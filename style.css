@@ -1,0 +1,166 @@
+:root {
+    --body-color: rgb(252, 250, 248);
+    --logo-bg: rgba(143, 40, 60, 0.634);
+    --hover: rgb(61, 75, 121);
+    --accent: rgb(198, 38, 70);
+    --form-bg: rgb(255, 255, 255);
+    --form-color: rgb(80, 80, 80);
+    --focus: rgb(61, 57, 116);
+  }
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif, system-ui;
+    font-size: 16px;
+    text-align: left;
+    background-color: var(--body-color);
+}
+
+button, input {
+    font-family: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
+  }
+
+#page-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: var(--body-color)
+}
+
+#left-header {
+    flex: 1;
+    position: relative;
+    background-image: url(images/pinkguava.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: min(50%, 400px);
+    padding-top: 200px;
+}
+
+#logo-container {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--logo-bg);
+    color: white;
+    height: 12rem;
+}
+
+#logo-img {
+    height: 10rem;
+}
+
+.logo-box {
+    display: flex;
+}
+
+#logo-text {
+    flex: 1;
+    font-family: 'Arima', cursive;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.img-footer {
+    color: var(--body-color);
+    position: absolute;
+    bottom: 0;
+}
+
+.img-footer>a {
+    color: var(--body-color);
+}
+
+
+#right-header {
+    flex: 1.5;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.copy {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 1.65rem;
+    width: max(75%, 100px);
+}
+
+#copy-container, #submit-container {
+    padding: 2rem;
+}
+
+
+a {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.form {
+    height: min-content;
+    width: 100%;
+    background-color: var(--form-bg);
+    box-shadow: 0px 5px 10px rgba(128, 128, 128, 0.548);
+}
+
+form {
+    padding: 2rem;
+    padding-right: 145px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    flex: auto;
+}
+
+legend {
+    font-size: 1.35rem;
+    padding: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    padding: 0;
+    margin: 5px;
+}
+
+ul {
+ display: flex;
+}
+
+li {
+    list-style: none;
+    font-size: 100%;
+    color: var(--form-color);
+}
+
+label {
+    display: block;
+}
+
+input {
+    cursor: text;
+}
+
+#submit-button {
+    cursor: pointer;
+    border: 0px;
+    border-radius: 0.3rem;
+    padding: 0.6rem 1.6rem;
+    color: var(--body-color);
+    background-color: var(--accent);
+}
+
+.login {
+    padding-top: 1rem;
+}
