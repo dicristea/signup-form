@@ -2,7 +2,7 @@
     --body-color: rgb(252, 250, 248);
     --logo-bg: rgba(139, 23, 46, 0.612);
     --hover: rgb(61, 75, 121);
-    --accent: rgb(210, 41, 74);
+    --accent: rgb(219, 49, 102);
     --form-bg: rgb(255, 255, 255);
     --form-text: rgb(80, 80, 80);
     --input-box: rgba(66, 30, 37, 0.612);
@@ -180,7 +180,7 @@ label {
 .required::after{
     content: " *";
     font-weight: bold;
-    color: red;
+    color: var(--accent);
   }
 
 input {
@@ -195,13 +195,13 @@ input {
 }
 
 input:focus {
-    border: 2px solid var(--accent);
+    border: 1px solid rgb(87, 137, 87);
     box-shadow: 3px 5px 5px rgba(128, 128, 128, 0.228);
 }
 
 .error-box {
     padding: 0.8rem 0;
-    color: rgb(188, 4, 4);
+    color: rgb(238, 0, 0);
 }
 
 #submit-button {
