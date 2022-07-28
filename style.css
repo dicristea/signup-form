@@ -1,11 +1,11 @@
 :root {
     --body-color: rgb(252, 250, 248);
-    --logo-bg: rgba(143, 40, 60, 0.634);
+    --logo-bg: rgba(139, 23, 46, 0.612);
     --hover: rgb(61, 75, 121);
-    --accent: rgb(198, 38, 70);
+    --accent: rgb(210, 41, 74);
     --form-bg: rgb(255, 255, 255);
-    --form-color: rgb(80, 80, 80);
-    --focus: rgb(61, 57, 116);
+    --form-text: rgb(80, 80, 80);
+    --input-box: rgba(66, 30, 37, 0.612);
   }
 
 body {
@@ -25,31 +25,37 @@ button, input {
 #page-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     height: 100vh;
     background-color: var(--body-color)
 }
 
 #left-header {
     flex: 1;
-    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
     background-image: url(images/pinkguava.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: min(50%, 400px);
-    padding-top: 200px;
+    padding-top: 10vw;
+    min-height: min-content;
 }
 
 #logo-container {
+    flex: none;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     background-color: var(--logo-bg);
     color: white;
-    height: 12rem;
+    padding: 1.75rem 50px;
 }
 
 #logo-img {
-    height: 10rem;
+    width: 7rem;
 }
 
 .logo-box {
@@ -59,36 +65,47 @@ button, input {
 #logo-text {
     flex: 1;
     font-family: 'Arima', cursive;
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 0;
+}
+
+.footer-container {
+    flex: 1;
+    display: flex;
+    text-align: center;
 }
 
 .img-footer {
     color: var(--body-color);
-    position: absolute;
-    bottom: 0;
+    flex: 1;
+    margin-top: auto;
+    padding: 10px 0;
+    width: 100%;
 }
 
 .img-footer>a {
     color: var(--body-color);
+    flex: content;
 }
 
 
 #right-header {
     flex: 1.5;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .copy {
     margin-block-start: 0;
     margin-block-end: 0;
-    font-size: 1.65rem;
-    width: max(75%, 100px);
+    font-size: 1.75rem;
+    width: max(80%, 200px);
 }
 
 #copy-container, #submit-container {
-    padding: 2rem;
+    padding: 3rem;
+    padding-left: 3.5rem;
 }
 
 
@@ -97,16 +114,15 @@ a {
     color: var(--accent);
 }
 
-.form {
+.form-container {
     height: min-content;
     width: 100%;
     background-color: var(--form-bg);
-    box-shadow: 0px 5px 10px rgba(128, 128, 128, 0.548);
+    box-shadow: 0px 5px 10px rgba(128, 128, 128, 0.228);
 }
 
 form {
-    padding: 2rem;
-    padding-right: 145px;
+    padding: 2rem 0;
     display: flex;
     flex-wrap: wrap;
 }
@@ -115,13 +131,15 @@ form {
 fieldset {
     border: none;
     padding: 0;
+    padding-left: 3.5rem;
     margin: 0;
     flex: auto;
 }
 
 legend {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     padding: 0;
+    padding-bottom: 2px;
 }
 
 p {
@@ -129,27 +147,61 @@ p {
     margin: 0;
 }
 
+.required-notif {
+    padding-bottom: 1rem;
+}
+
+#form {
+    width: max(75%, 200px);
+}
+
 ul, li {
     padding: 0;
-    margin: 5px;
+    margin: 0;
 }
 
 ul {
  display: flex;
+ flex-wrap: wrap;
 }
 
 li {
     list-style: none;
     font-size: 100%;
-    color: var(--form-color);
+    color: var(--form-text);
+    flex-grow: 1;
 }
 
 label {
     display: block;
+    padding-bottom: 2px;
 }
+
+.required::after{
+    content: " *";
+    font-weight: bold;
+    color: red;
+  }
 
 input {
     cursor: text;
+    width: 85%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--input-box);
+    border-radius: 4px;
+    transition: 0.5s;
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid var(--accent);
+    box-shadow: 3px 5px 5px rgba(128, 128, 128, 0.228);
+}
+
+.error-box {
+    padding: 0.8rem 0;
+    color: rgb(188, 4, 4);
 }
 
 #submit-button {
@@ -157,8 +209,10 @@ input {
     border: 0px;
     border-radius: 0.3rem;
     padding: 0.6rem 1.6rem;
-    color: var(--body-color);
+    color: whitesmoke;
+    font-weight: bold;
     background-color: var(--accent);
+    box-shadow: 3px 5px 5px rgba(128, 128, 128, 0.228);
 }
 
 .login {
